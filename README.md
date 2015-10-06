@@ -12,8 +12,8 @@ Control allows displaying lengths and headings of the segments that form a polyl
 
 Examples:
 ---------
- * [measure-dynamic.html](https://rawgit.com/neogis-de/OL-DynamicMeasure/geodesic/examples/measure-dynamic.html) 
-
+ * [measure-dynamic.html](http://rawgit.com/neogis-de/OL-DynamicMeasure/geodesic/examples/measure-dynamic.html) 
+(dont't use https, otherwise some contents are blocked...)
 Operation:
 ---------
 
