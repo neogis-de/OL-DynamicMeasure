@@ -1,6 +1,9 @@
 Control for OpenLayers to measure and shows measurements at the cursor
 ======================================================================
 
+A fork of http://jorix.github.com/OL-DynamicMeasure
+with added option to use "geodesic:true" for measurements.
+
 Based on `OpenLayers.Control.Measure`, the **DynamicMeasure** control shows
 measurements on labels that follow the cursor. This avoids having to worry
 about preparing a DOM item to display measurements.
