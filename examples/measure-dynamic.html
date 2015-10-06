@@ -6,7 +6,7 @@
     <meta name="author" content="Jorix" />
     <meta name="description" content="Usage example of DynamicMeasure control for see measurements beside the cursor." />
     <meta name="keywords" content="OpenLayers, measuring, dynamic, area, length, distance, cursor" />
-    <link rel="stylesheet" href="http://jorix.github.com/OL-Ragbag/examples/github-pages/forkme_banner.css" type="text/css">
+    <link rel="stylesheet" href="./forkme_banner.css" type="text/css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,29 +26,54 @@
             position: relative;
             width: 512px;
         }
+		html,body
+		{
+		width:100%;
+		height:100%;
+		margin: 0px !important;
+		}
+		#map, #options,#comment
+		{
+		width:50%;
+		height:30%;
+		margin: auto !important;
+		}
+		#shortdesc, #screenshot
+		{
+		width:50%;
+		margin: auto !important;
+		padding-bottom:10px;
+		}
+		#rot
+		{
+		font-weight:bold;
+		color:red;
+		}
     </style>
   </head>
   <body>
     <h1 id="title">OpenLayers Measure Example</h1>
-    <a id="forkme_banner" href="https://github.com/jorix/OL-DynamicMeasure">View on GitHub</a>
+    
+	<a id="forkme_banner" href="https://github.com/jorix/OL-DynamicMeasure" target="_blank">fork from...</a><br />
+	 <a id="forkme_banner2" href="https://github.com/neogis-de/OL-DynamicMeasure/" target="_blank">View on GitHub</a>
     <div id="tags">
         measuring, dynamic, area, length, distance, cursor
     </div>
     <p id="shortdesc">
         Demonstrates the dynamic measure control to measure and see measurements beside the cursor.
     </p>
-    <div id="map" class="smallmap"></div>
+    <div id="map"></div>
     <div id="options">
         <div id="output">
         </div>
         <ul id="controlToggle">
             <li>
                 <input type="radio" name="type" value="none" id="noneToggle"
-                       onclick="toggleControl(this);" checked="checked" />
+                       onclick="toggleControl(this);" />
                 <label for="noneToggle">navigate</label>
             </li>
             <li>
-                <input type="radio" name="type" value="line" id="lineToggle" onclick="toggleControl(this);" />
+                <input type="radio" name="type" value="line" id="lineToggle" onclick="toggleControl(this);" checked="checked"  />
                 <label for="lineToggle">measure distance</label>
             </li>
             <li>
@@ -72,14 +97,22 @@
                 <input type="checkbox" name="showHeading" id="showHeading" onclick="toggleShowHeading(this);" />
                 <label for="showSegments">show segments heading</label>
             </li>
+			
+			<li>
+                <input type="checkbox" name="geodesic" id="geodesic" onclick="geodesic_on_off(this);" />
+               <span id="rot"> <label for="geodesic">use geodesic:true</label> </span>
+            </li>
         </ul>
     </div>
-    <div id="docs">
-        <p>
-            View the <a href="measure-dynamic.js" target="_blank">measure-dynamic.js</a> 
-            source to see how this is done.
-        </p>
-    </div>
+	<div id="comment">
+	<b>Measure the bridge in the center of the mapExtent.
+	The real length of the bridge is between 24 and 25 meters.<br /> Without geodesic:true you get a wrong measurement!</b>
+	<div id="screenshot"><img src="screenshot.jpg"/></div>
+	
+	<i>Hint from Andreas Hocevar: Geodesic calculation works the same in both the ScaleLine and Measure controls, so it has the same prerequisites. The advice that proj4js is needed to make it work is only true to the extent it is with any reprojection in OpenLayers: as long as your map is in EPSG:900913, you don't need proj4js. As soon as you use a different projection, you need it. </i>
+	<a href="http://osgeo-org.1560.x6.nabble.com/Getting-the-right-results-from-Measure-tool-using-EPSG-3776-tp3921884p3921894.html" target="_blank">http://osgeo-org.1560.x6.nabble.com/Getting-the-right-results-from-Measure-tool-using-EPSG-3776-tp3921884p3921894.html</a>
+	</div>
+  
     <script src="measure-dynamic.js"></script>
   </body>
 </html>

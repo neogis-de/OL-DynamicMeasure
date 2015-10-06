@@ -7,12 +7,22 @@
 // The map
     var map = new OpenLayers.Map({
         div: 'map',
-        layers: [
-            new OpenLayers.Layer.WMS('OpenLayers WMS',
-            'http://vmap0.tiles.osgeo.org/wms/vmap0?', {layers: 'basic'})
-        ]
-    });
-    map.setCenter(new OpenLayers.LonLat(0, 0), 3);
+		projection: new OpenLayers.Projection("EPSG:3857"),
+		maxExtent: new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34),
+		numZoomLevels: 19
+        
+	});
+	layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
+    map.addLayer(layer);
+    map.setCenter(
+        new OpenLayers.LonLat(1496815.4963092, 6890216.552136)
+		/*.transform(
+            new OpenLayers.Projection("EPSG:4326"),
+            map.getProjectionObject())
+        */
+		
+		, 18
+    ); 
 
 // The measure controls
     var measureControls = {
@@ -25,7 +35,9 @@
         measureControls.polygon,
         new OpenLayers.Control.LayerSwitcher()
     ]);
-
+	
+	measureControls.line.activate();
+	
 // functions used in the form to set the measure control.
     function toggleControl(element) {
         for (var key in measureControls) {
@@ -94,3 +106,19 @@
             measureControls[key].maxHeadings = maxSegments;
         }
     }
+	
+	function geodesic_on_off(checkbox)
+	{
+	if(checkbox.checked)
+	{
+		measureControls.line.cancel();
+		measureControls.line.geodesic=true;
+		
+	}
+	else{
+		measureControls.line.cancel();
+		measureControls.line.geodesic=false;
+		
+	};
+	
+	}
