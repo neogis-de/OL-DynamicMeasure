@@ -12,7 +12,7 @@ Control allows displaying lengths and headings of the segments that form a polyl
 
 Examples:
 ---------
- * [measure-dynamic.html](http://jorix.github.com/OL-DynamicMeasure/examples/measure-dynamic.html) (adapted from "measure.html" OpenLayers example)
+ * [measure-dynamic.html](https://rawgit.com/neogis-de/OL-DynamicMeasure/geodesic/examples/measure-dynamic.html) 
 
 Operation:
 ---------
