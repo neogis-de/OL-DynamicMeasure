@@ -35,7 +35,7 @@ Example:
 
 This control is now adapted to handle the methods *undo* *redo* and *cancel* of drawing handlers.
 
-See the example [measure-dynamic-dev.html](http://jorix.github.com/OL-DynamicMeasure/examples/measure-dynamic-dev.html) (allows choose whether to use the patch posted on [OL-Ragbag](https://github.com/jorix/OL-Ragbag/blob/gh-pages/README.md#the-components))
+See the example [measure-dynamic.html](https://github.com/neogis-de/OL-DynamicMeasure/blob/geodesic/examples/measure-dynamic.html) (allows choose whether to use the geodesic option while measuring))
 
 The control can use it as a `DrawFeature` control, see example [measure-and-draw.html](http://jorix.github.com/OL-DynamicMeasure/examples/measure-and-draw.html)
 
